@@ -1,43 +1,41 @@
 package com.mycompany.piscinasgp.modelo;
 
 public class ClienteParticular {
-    private String razonSocial;
-    private String nombreFantasia;
-    private String rubro;
-    private String cuit;
+    private String nombre;
+    private String apellido;
+    private String cuil;
+
+    public ClienteParticular(String nombre, String apellido, String cuil) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cuil = cuil;
+    }
 
     public ClienteParticular() {
     }
 
-    public ClienteParticular(String razonSocial, String nombreFantasia, String rubro, String cuit) {
-        this.razonSocial = razonSocial;
-        this.nombreFantasia = nombreFantasia;
-        this.rubro = rubro;
-        this.cuit = cuit;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getRazonSocial() { return razonSocial; }
-
-    public String getNombreFantasia() { return nombreFantasia; }
-
-    public String getRubro() { return rubro; }
-
-    public String getCuit() { return cuit; }
-
-    public void setRazonSocial(String razonSocial) {
-        this.razonSocial = razonSocial;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setNombreFantasia(String nombreFantasia) {
-        this.nombreFantasia = nombreFantasia;
+    public String getCuil() {
+        return cuil;
     }
 
-    public void setRubro(String rubro) {
-        this.rubro = rubro;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setCuit(String cuit) {
-        this.cuit = cuit;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setCuil(String cuil) {
+        this.cuil = cuil;
     }
     
     
