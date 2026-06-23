@@ -27,7 +27,7 @@ public class UserValidator {
             );
         }
     }
-    
+
     public static void esValidoNombre( String nombre ) throws ValidadorException {
         if ( nombre == null || nombre.isBlank() ) {
             throw new ValidadorException(
