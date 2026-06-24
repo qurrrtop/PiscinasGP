@@ -25,6 +25,11 @@ export default class Rules {
                 max: 255,
                 regex: /^[A-Za-z\d@$!%*?&]+$/
             },
-            
+            GOALS: {
+                type: "numeric",
+                min: 0,
+                max: 30,
+                integer: true
+}
         }
 }
