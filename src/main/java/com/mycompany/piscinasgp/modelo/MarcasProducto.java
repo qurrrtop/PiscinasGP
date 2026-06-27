@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.piscinasgp.modelo;
+import com.mycompany.piscinasgp.utils.Identifiable;
 
 /**
  *
  * @author Mapatipi
  */
-public class MarcasProducto {
+public class MarcasProducto implements Identifiable{
 private Long idMarca;
 private String nombre;
 
@@ -23,17 +24,18 @@ private String nombre;
         this.idMarca = idMarca;
         this.nombre = nombre;
     }
-
-    public Long getIdMarca() {
+    
+    @Override
+    public Long getId() {
         return idMarca;
     }
 
     public String getNombre() {
         return nombre;
     }
-
-    public void setIdMarca(Long idMarca) {
-        this.idMarca = idMarca;
+    @Override
+    public void setId(Long id) {
+        this.idMarca = id;
     }
 
     public void setNombre(String nombre) {
