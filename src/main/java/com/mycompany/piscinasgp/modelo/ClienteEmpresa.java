@@ -1,6 +1,8 @@
 package com.mycompany.piscinasgp.modelo;
-import com.mycompany.piscinasgp.modelo.Cliente;
 
+import com.mycompany.piscinasgp.modelo.Cliente;
+import com.mycompany.piscinasgp.validadores.SetValidator;
+import com.mycompany.piscinasgp.validadores.StringFieldType;
 
 public class ClienteEmpresa extends Cliente {
     private String razonSocial;
@@ -18,10 +20,10 @@ public class ClienteEmpresa extends Cliente {
         
         super(email, telefono, calleYnumero, ciudad, provincia, codigoPostal, observaciones);
         
-        this.razonSocial = razonSocial;
-        this.nombreFantasia = nombreFantasia;
-        this.rubro = rubro;
-        this.cuit = cuit;
+        setRazonSocial(razonSocial);
+        setNombreFantasia(nombreFantasia);
+        setRubro(rubro);
+        setCuit(cuit);
     }
     
     public ClienteEmpresa(Long idCliente, String razonSocial, String nombreFantasia, String rubro, 
@@ -39,26 +41,31 @@ public class ClienteEmpresa extends Cliente {
     }
     
     public String getRazonSocial() { return razonSocial; }
-
     public String getNombreFantasia() { return nombreFantasia; }
-
     public String getRubro() { return rubro; }
-
     public String getCuit() { return cuit; }
 
     public void setRazonSocial(String razonSocial) {
+        SetValidator.validar(razonSocial, StringFieldType.RAZON_SOCIAL);
+        
         this.razonSocial = razonSocial;
     }
 
     public void setNombreFantasia(String nombreFantasia) {
+        SetValidator.validar(nombreFantasia, StringFieldType.NOMBRE_FANTASIA);
+        
         this.nombreFantasia = nombreFantasia;
     }
 
     public void setRubro(String rubro) {
+        SetValidator.validar(rubro, StringFieldType.RUBRO);
+        
         this.rubro = rubro;
     }
 
     public void setCuit(String cuit) {
+        SetValidator.validar(cuit, StringFieldType.CUIT);
+        
         this.cuit = cuit;
     }
     

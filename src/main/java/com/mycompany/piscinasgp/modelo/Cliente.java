@@ -1,15 +1,10 @@
 package com.mycompany.piscinasgp.modelo;
 import com.mycompany.piscinasgp.utils.Identifiable;
+import com.mycompany.piscinasgp.validadores.NumericFieldType;
+import com.mycompany.piscinasgp.validadores.SetValidator;
+import com.mycompany.piscinasgp.validadores.StringFieldType;
 
-
-
-/**
- *
- * @author Mapatipi
- */
-
-
-public class Cliente implements Identifiable{
+abstract class Cliente implements Identifiable{
     private Long idCliente;
     private String email;
     private String telefono;
@@ -45,42 +40,18 @@ public class Cliente implements Identifiable{
 
     //getters
     @Override
-    public Long getId() {
-        return idCliente;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public String getCalleYnumero() {
-        return calleYnumero;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public String getProvincia() {
-        return provincia;
-    }
-
-    public int getCodigoPostal() {
-        return codigoPostal;
-    }
-
-    public String getObservaciones() {
-        return observaciones;
-    }
+    public Long getId() { return idCliente; }
+    public String getEmail() { return email; }
+    public String getTelefono() { return telefono; }
+    public String getCalleYnumero() { return calleYnumero; }
+    public String getCiudad() { return ciudad; }
+    public String getProvincia() { return provincia; }
+    public int getCodigoPostal() { return codigoPostal; }
+    public String getObservaciones() { return observaciones; }
 
     
     //setters
-    
-    
+@Override
     public void setId(Long id) {
         if(idCliente != null && !idCliente.equals(0L)){
             throw new IllegalArgumentException ("el id ya fue asignado y no puede ser modificado");
@@ -92,42 +63,40 @@ public class Cliente implements Identifiable{
     }
 
     public void setEmail(String email) {
-        SetValidator.validate(email, StringFieldType.EMAIL);
+        SetValidator.validar(email, StringFieldType.EMAIL);
         
         this.email = email;
     }
 
     public void setTelefono(String telefono) {
-        SetValidator.validate(telefono, StringFieldType.TELEFONO);
+        SetValidator.validar(telefono, StringFieldType.TELEFONO);
         this.telefono = telefono;
     }
 
     public void setCalleYnumero(String calleYnumero) {
-        SetValidator.validate(calleYnumero, StringFieldType.DIRECCION);
+        SetValidator.validar(calleYnumero, StringFieldType.CALLE_Y_NUMERO);
         this.calleYnumero = calleYnumero;
     }
 
     public void setCiudad(String ciudad) {
-        SetValidator.validate(ciudad, StringFieldType.CIUDAD);
+        SetValidator.validar(ciudad, StringFieldType.CIUDAD);
         this.ciudad = ciudad;
     }
 
     public void setProvincia(String provincia) {
-        SetValidator.validate(provincia, StringFieldType.PROVINCIA);
+        SetValidator.validar(provincia, StringFieldType.PROVINCIA);
         this.provincia = provincia;
     }
 
     public void setCodigoPostal(int codigoPostal) {
-        SetValidator.validate(codigoPostal, NumericFieldType.CODIGO_POSTAL);
+        SetValidator.validar(codigoPostal, NumericFieldType.CODIGO_POSTAL);
         
         this.codigoPostal = codigoPostal;
     }
 
     public void setObservaciones(String observaciones) {
-        SetValidator.validate(observaciones, StringFieldType.OBSERVACIONES); //de observar amigo, pensala// 
-        this.observaciones = observaciones;
+        SetValidator.validar(observaciones, StringFieldType.OBSERVACIONES); //de observar amigo, pensala// 
+        this.observaciones = observaciones;                                        //asi se observa chicos
     }
-    
-    
     
 }

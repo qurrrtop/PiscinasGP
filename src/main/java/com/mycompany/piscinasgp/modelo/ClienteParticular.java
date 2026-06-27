@@ -1,11 +1,10 @@
 package com.mycompany.piscinasgp.modelo;
+
 import com.mycompany.piscinasgp.modelo.Cliente;
+import com.mycompany.piscinasgp.validadores.NumericFieldType;
+import com.mycompany.piscinasgp.validadores.SetValidator;
+import com.mycompany.piscinasgp.validadores.StringFieldType;
 
-
-/**
-
- * * @author Mapatipi
- */
 public class ClienteParticular extends Cliente {
     // Atributos ClienteParticular
     private String nombre;
@@ -43,32 +42,27 @@ public class ClienteParticular extends Cliente {
 
     
     
-    public String getNombre() {
-        return nombre;
-    }
-
+    public String getNombre() { return nombre; }
+    public String getCuil() { return cuil; }
+    public String getApellido() { return apellido; }
+ 
     
-     public String getCuil() {
-        return cuil;
-    }
-
-     
-    public String getApellido() {
-        return apellido;
-    }
-
-       
+    
     public void setNombre(String nombre) {
+        SetValidator.validar(nombre, StringFieldType.NOMBRE);
+        
         this.nombre = nombre;
     }
 
-
     public void setApellido(String apellido) {
+        SetValidator.validar(apellido, StringFieldType.APELLIDO);
+        
         this.apellido = apellido;
     }
 
-   
     public void setCuil(String cuil) {
+        SetValidator.validar(cuil, StringFieldType.CUIL);
+        
         this.cuil = cuil;
     }
 }
