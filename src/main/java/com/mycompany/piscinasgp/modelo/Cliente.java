@@ -1,4 +1,3 @@
-
 package com.mycompany.piscinasgp.modelo;
 import com.mycompany.piscinasgp.utils.Identifiable;
 
@@ -83,7 +82,7 @@ public class Cliente implements Identifiable{
     
     
     public void setId(Long id) {
-        if(idCliente != null && !idCliente.equeals(0L)){
+        if(idCliente != null && !idCliente.equals(0L)){
             throw new IllegalArgumentException ("el id ya fue asignado y no puede ser modificado");
         }
         if (id == null || id <= 0 ){
