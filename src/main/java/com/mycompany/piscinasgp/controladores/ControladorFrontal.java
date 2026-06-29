@@ -1,4 +1,4 @@
-package controladores;
+package com.mycompany.piscinasgp.controladores;
 
 import java.io.IOException;
 import jakarta.servlet.Filter;
