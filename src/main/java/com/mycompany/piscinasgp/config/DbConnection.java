@@ -4,10 +4,16 @@
  */
 package com.mycompany.piscinasgp.config;
 
+import java.sql.Connection;
+
 /**
  *
  * @author Usuario
  */
 public class DbConnection {
+
+    public Connection getConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
